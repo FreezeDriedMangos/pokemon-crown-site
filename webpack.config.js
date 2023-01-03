@@ -32,13 +32,15 @@ module.exports = (env, argv) => {
     resolve: { extensions: ['*', '.js', '.jsx'] },
     output: {
       path: path.resolve(__dirname, 'dist/'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     devServer: {
       contentBase: path.join(__dirname, 'public/'),
       port: 3000,
       publicPath: 'http://localhost:3000',
-      hotOnly: true
+      hotOnly: true,
+      historyApiFallback: true,
     },
     plugins
   };
